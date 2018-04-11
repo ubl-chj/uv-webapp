@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+ uv-webapp:
+    image: ubl2/uv-webapp:0.1.0
+    container_name: uv-webapp
+    ports:
+      - "9001:9001"
