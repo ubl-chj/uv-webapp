@@ -26758,11 +26758,11 @@ define('extensions/uv-seadragon-extension/Extension',["require", "exports", "../
         Extension.prototype.getSearchResults = function (searchUri, terms, searchResults, cb) {
             var _this = this;
             $.getJSON(searchUri, function (results) {
-                if (results['@graph'][0].resources && results['@graph'][0].resources.length) {
-                    searchResults = searchResults.concat(_this.parseAnnotationList(results['@graph'][0]));
+                if (results.resources && results.resources.length) {
+                    searchResults = searchResults.concat(_this.parseAnnotationList(results));
                 }
-                if (results['@graph'][0].next) {
-                    _this.getSearchResults(results['@graph'][0].next, terms, searchResults, cb);
+                if (results.next) {
+                    _this.getSearchResults(results.next, terms, searchResults, cb);
                 }
                 else {
                     cb(searchResults);
